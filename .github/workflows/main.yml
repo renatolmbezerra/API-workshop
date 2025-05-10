@@ -1,0 +1,24 @@
+name: CI
+
+on: pull_request
+
+jobs:
+  Continuous-Integration:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install Requirements
+        run: pip install -r requirements-dev.txt
+
+      - name: List Directory Contents
+        run: ls -la
+
+      - name: Run Tests
+        run: pytest -v
