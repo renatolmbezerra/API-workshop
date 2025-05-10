@@ -5,9 +5,9 @@ on: pull_request
 jobs:
   Continuous-Integration:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ${{ github.workspace }}
+    # defaults:
+    #   run:
+    #     working-directory: ${{ github.workspace }}
 
     steps:
       - name: Check out repository
@@ -29,4 +29,4 @@ jobs:
 
       - name: Run Tests
         run: pytest -v
-        working-directory: ./
+        # working-directory: ./
