@@ -20,3 +20,19 @@ def test_ola_mundo_json():
     """
     response = client.get("/")
     assert response.json() == {"Olá": "Mundo"}
+
+def test_listar_produtos_status_code():
+    """
+    Testa a função listar_produtos.
+    :return: None
+    """
+    response = client.get("/produtos")
+    assert response.status_code == 200
+
+def test_tamanho_da_lista_produtos():
+    """
+    Testa a função listar_produtos.
+    :return: None
+    """
+    response = client.get("/produtos")
+    assert len(response.json()) == 4
