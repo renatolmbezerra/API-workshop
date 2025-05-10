@@ -43,7 +43,7 @@ def ola_mundo():
     Função que retorna um dicionário com a chave "Ola" e o valor "Mundo".
     :return: Dicionário com a chave "Ola" e o valor "Mundo".
     """
-    return {"Olá": "Pessoal"}
+    return {"Olá": "Mundo"}
 
 @app.get("/produtos")
 def listar_produtos():
