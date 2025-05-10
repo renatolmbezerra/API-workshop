@@ -65,4 +65,4 @@ def obter_produto(produto_id: int):
     for produto in produtos:
         if produto["id"] == produto_id:
             return produto
-    return {"erro": "Produto não encontrado"}   
+    return {"Status": 404, "erro": "Produto não encontrado"}   
