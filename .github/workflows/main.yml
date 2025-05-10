@@ -20,5 +20,8 @@ jobs:
       - name: List Directory Contents
         run: ls -la
 
+      - name: Listar arquivos e diretórios
+        run: ls -R
+
       - name: Run Tests
         run: pytest -v
