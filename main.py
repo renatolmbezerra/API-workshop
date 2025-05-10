@@ -18,6 +18,7 @@ produtos: List[Dict[str, any]] = [
         "descricao": "Um computador portátil com 16GB de RAM e 512GB de SSD.",
         "preco": 4999.99,
         "disponivel": False,
+        "categoria": "eletronicos",
     },
     {
         "id": 3,
@@ -52,3 +53,16 @@ def listar_produtos():
     :return: Lista de produtos.
     """
     return produtos
+
+
+@app.get("/produtos/{produto_id}")
+def obter_produto(produto_id: int):
+    """
+    Função que retorna um produto específico com base no ID.
+    :param produto_id: ID do produto a ser retornado.
+    :return: Produto correspondente ao ID fornecido.
+    """
+    for produto in produtos:
+        if produto["id"] == produto_id:
+            return produto
+    return {"erro": "Produto não encontrado"}   

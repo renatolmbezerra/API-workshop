@@ -36,3 +36,18 @@ def test_tamanho_da_lista_produtos():
     """
     response = client.get("/produtos")
     assert len(response.json()) == 4
+
+def test_pega_um_produto():
+    """
+    Testa a função obter_produto.
+    :return: None
+    """
+    response = client.get("/produtos/1")
+    assert response.json() == {
+        "id": 1,
+        "nome": "Smartphone",
+        "descricao": "Smartphone com tela de 6 polegadas e 128GB de armazenamento.",
+        "preco": 1999.99,
+        "disponivel": True,
+        "categoria": "eletronicos",
+    }
