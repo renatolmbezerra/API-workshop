@@ -24,6 +24,5 @@ jobs:
         run: ls -R
 
       - name: Run Tests
-        run: |
-          cd API-workshop
-          pytest -v
+        run: pytest -v
+        working-directory: ./API-workshop  # Especificando o diretório correto
