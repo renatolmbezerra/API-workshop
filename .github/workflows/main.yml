@@ -31,5 +31,12 @@ jobs:
       - name: Listar arquivos e diretórios
         run: ls -R
 
+      - name: Check Environment Variables
+        run: |
+          echo "POSTGRES_USER is $POSTGRES_USER"
+          echo "POSTGRES_DB is $POSTGRES_DB"
+          echo "DB_HOST is $DB_HOST"
+          echo "DB_PORT is $DB_PORT"
+
       - name: Run Tests
         run: pytest -v
