@@ -5,14 +5,7 @@ on: pull_request
 jobs:
   Continuous-Integration:
     runs-on: ubuntu-latest
-
-    env:
-      POSTGRES_USER: ${{ secrets.POSTGRES_USER }}
-      POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
-      POSTGRES_DB: ${{ secrets.POSTGRES_DB }}
-      DB_HOST: ${{ secrets.DB_HOST }}
-      DB_PORT: ${{ secrets.DB_PORT }}
-
+    
     steps:
       - name: Check out repository
         uses: actions/checkout@v3
@@ -30,13 +23,6 @@ jobs:
 
       - name: Listar arquivos e diretórios
         run: ls -R
-
-      - name: Check Environment Variables
-        run: |
-          echo "POSTGRES_USER is $POSTGRES_USER"
-          echo "POSTGRES_DB is $POSTGRES_DB"
-          echo "DB_HOST is $DB_HOST"
-          echo "DB_PORT is $DB_PORT"
 
       - name: Run Tests
         run: pytest -v
