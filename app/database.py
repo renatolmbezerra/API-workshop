@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 
 # load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), '.env'))
 
-load_dotenv()
+load_dotenv(dotenv_path=".env.prod")
 
 db_user = os.getenv("POSTGRES_USER")
 db_password = os.getenv("POSTGRES_PASSWORD")

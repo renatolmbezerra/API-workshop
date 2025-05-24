@@ -14,3 +14,6 @@ class Produto(Base):
     disponivel = Column(Boolean, nullable=False)
     categoria = Column(String, nullable=False)
     created_at = Column(DateTime, server_default=func.now())
+
+    class Config:
+        orm_mode = True
